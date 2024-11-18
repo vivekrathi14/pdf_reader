@@ -1,4 +1,4 @@
-# Task 1: Import the Libraries
+# Import the Libraries
 import base64
 from tempfile import NamedTemporaryFile
 
@@ -13,6 +13,7 @@ from langchain.vectorstores import Chroma
 from PyPDF2 import PdfReader, PdfWriter
 
 
+# Process the Input PDF
 def process_file(doc):
     model_name = "thenlper/gte-small"
     model_kwargs = {"device": "cpu"}
@@ -31,7 +32,7 @@ def process_file(doc):
     return chain
 
 
-# Task 6: Method for Handling User Input
+# Method for Handling User Input
 def handle_userinput(query):
 
     response = st.session_state.conversation(
@@ -52,7 +53,6 @@ def handle_userinput(query):
 
 
 def main():
-    # Task 3: Create Web-page Layout
     load_dotenv()
     st.set_page_config(
         layout="wide", page_title="Interactive Reader", page_icon=":books:"
@@ -76,7 +76,6 @@ def main():
     )
     st.session_state.col1.markdown(expander_css, unsafe_allow_html=True)
 
-    # Task 5: Load and Process the PDF
     st.session_state.col1.subheader("Your documents")
     st.session_state.pdf_doc = st.session_state.col1.file_uploader(
         "Upload your PDF here and click on 'Process'"
@@ -95,7 +94,6 @@ def main():
                         "Done processing. You may now ask a question."
                     )
 
-    # Task 7: Handle Query and Display Pages
     if user_question:
         handle_userinput(user_question)
         with NamedTemporaryFile(suffix="pdf") as temp:
