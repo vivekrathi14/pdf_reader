@@ -1,5 +1,10 @@
-## Project Description
+# Project Description
 This project aims to create an interactive PDF reader that allows users to upload custom PDF files and interact with a chatbot capable of answering questions based on the content of the PDF. The chatbot utilizes the power of GPT-3.5/GPT-4 to provide meaningful responses by leveraging the context extracted from the PDF apply RAG (Retrieval Data Augmentation)
+
+## Demo
+
+[![Project Demo](reader_img.png)](https://youtu.be/wOV0Xfxm59U)
+
 
 ## Key Skills Learned:
 1. Deep Learning: Using GPT models (GPT-3.5/GPT-4) for language generation and question-answering.
